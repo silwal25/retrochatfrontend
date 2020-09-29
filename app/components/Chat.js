@@ -45,7 +45,7 @@ function Chat() {
     }, [appState.isChatOpen])
 
     useEffect(() => {
-        socket.current = io("process.env.BACKENDURL" || "https://retrochatbackend.herokuapp.com/")
+        socket.current = io(process.env.BACKENDURL || "https://retrochatbackend.herokuapp.com")
         socket.current.on("chatFromServer", message => {
             setState(draft => {
                 draft.chatMessages.push(message)
