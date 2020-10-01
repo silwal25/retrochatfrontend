@@ -13,21 +13,21 @@ function HomeGuest() {
             hasErrors: false,
             message: "",
             isUnique: false,
-            checkCount: 0,
+            checkCount: 0
         },
         email: {
             value: "",
             hasErrors: false,
             message: "",
             isUnique: false,
-            checkCount: 0,
+            checkCount: 0
         },
         password: {
             value: "",
             hasErrors: false,
-            message: "",
+            message: ""
         },
-        submitCount: 0,
+        submitCount: 0
     }
 
     function ourReducer(draft, action) {
@@ -207,7 +207,7 @@ function HomeGuest() {
                             <label htmlFor="username-register" className="text-muted mb-1">
                                 <small>Username</small>
                             </label>
-                            <input onChange={(e) => dispatch({ type: "usernameImmediately", value: e.target.value })} id="username-register" name="username" className="form-control" type="text" placeholder="Pick a username" autoComplete="off" />
+                            <input onChange={e => dispatch({ type: "usernameImmediately", value: e.target.value })} id="username-register" name="username" className="form-control" type="text" placeholder="Pick a username" autoComplete="off" />
                             <CSSTransition in={state.username.hasErrors} timeout={300} classNames="liveValidateMessage" unmountOnExit>
                                 <div className="alert alert-danger small liveValidateMessage">{state.username.message}</div>
                             </CSSTransition>
@@ -216,7 +216,7 @@ function HomeGuest() {
                             <label htmlFor="email-register" className="text-muted mb-1">
                                 <small>Email</small>
                             </label>
-                            <input onChange={(e) => dispatch({ type: "emailImmediately", value: e.target.value })} id="email-register" name="email" className="form-control" type="text" placeholder="you@example.com" autoomplete="off" />
+                            <input onChange={e => dispatch({ type: "emailImmediately", value: e.target.value })} id="email-register" name="email" className="form-control" type="text" placeholder="you@example.com" autoomplete="off" />
                             <CSSTransition in={state.email.hasErrors} timeout={300} classNames="liveValidateMessage" unmountOnExit>
                                 <div className="alert alert-danger small liveValidateMessage">{state.email.message}</div>
                             </CSSTransition>
@@ -225,13 +225,13 @@ function HomeGuest() {
                             <label htmlFor="password-register" className="text-muted mb-1">
                                 <small>Password</small>
                             </label>
-                            <input onChange={(e) => dispatch({ type: "passwordImmediately", value: e.target.value })} id="password-register" name="password" className="form-control" type="password" placeholder="Create a password" />
+                            <input onChange={e => dispatch({ type: "passwordImmediately", value: e.target.value })} id="password-register" name="password" className="form-control" type="password" placeholder="Create a password" />
                             <CSSTransition in={state.password.hasErrors} timeout={300} classNames="liveValidateMessage" unmountOnExit>
                                 <div className="alert alert-danger small liveValidateMessage">{state.password.message}</div>
                             </CSSTransition>
                         </div>
                         <button type="submit" className="py-3 mt-4 btn btn-lg btn-success btn-block">
-                            Sign up for ComplexApp
+                            Sign up!
                         </button>
                     </form>
                 </div>
